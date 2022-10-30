@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Transform player;
-    [SerializeField] Rigidbody rb;
-    [SerializeField] GameObject camCombat;
-    [SerializeField] GameObject camExploration;
-    [SerializeField] Transform cam;
-    [SerializeField] float rotationSpeed = 5f;
-    [SerializeField] float rotationSmoothTime;
-    [SerializeField] float movementSpeed;
-    [SerializeField] float walkSpeed = 2f;
-    [SerializeField] float runingSpeed = 4f;
-    [SerializeField] CameraType cameraType;
-    float rotationSmoothSpeed;
     float horizontalInput;
     float verticalInput;
+    CharacterController player;
 
-    public enum CameraType
-    {
-        Exploration,
-        Combat
-    }
+    [SerializeField] float walkSpeed = 1f;
+    [SerializeField] float runSpeed = 2f;
+    float speed;
+
+    [SerializeField] float gravity = 9f;
+    [SerializeField] float jumpForce;
+    float fallSpeed;
+
+    Vector3 playerInput;
+    Vector3 movePlayer;
+
+    [SerializeField] Camera mainCamera;
+    Vector3 camForward;
+    Vector3 camRight;
 
     void Start()
     {
-        movementSpeed = walkSpeed;
+        player = GetComponent<CharacterController>();
+        speed = walkSpeed;
+    }
+
+    void Update()
+    {
+        
     }
 
     void FixedUpdate()
     {
+
         PlayerMovement();
     }
 
@@ -40,58 +45,65 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        playerInput = new Vector3(horizontalInput, 0, verticalInput);
+        playerInput = Vector3.ClampMagnitude(playerInput, 1);
+
+        GetCamDirection();
+
+        if (Input.GetButton("Sprint"))
         {
-            movementSpeed = runingSpeed;
+            speed = runSpeed;
         }
         else
         {
-            movementSpeed = walkSpeed;
+            speed = walkSpeed;
         }
 
-        if (Input.GetButton("Fire2"))
-        {
-            SetCameraType(CameraType.Combat);
-        }
-        else
-        {
-            SetCameraType(CameraType.Exploration);
-        }
+        movePlayer = playerInput.x * camRight + playerInput.z * camForward;
+        movePlayer = movePlayer * speed;
+
+        player.transform.LookAt(player.transform.position + movePlayer);
+
+        Gravity();
+        PlayerControlls();
+
+        player.Move(movePlayer * Time.deltaTime);
     }
 
-    void SetCameraType(CameraType cameraType)
+    void GetCamDirection()
     {
-        switch (cameraType)
+        camForward = mainCamera.transform.forward;
+        camRight = mainCamera.transform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+    }
+
+    void Gravity()
+    {
+        if (player.isGrounded)
         {
-            case CameraType.Exploration:
-                
-                camExploration.SetActive(true);
-                camCombat.SetActive(false);
-                
-                Vector3 lookdirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-                if (lookdirection.magnitude >= 0.1f)
-                {
-                    float targetAngle = Mathf.Atan2(lookdirection.x, lookdirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSmoothSpeed, rotationSmoothTime);
-                    transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            fallSpeed = -gravity * Time.deltaTime;
+            movePlayer.y = fallSpeed;
+        }else
+        {
+            fallSpeed -= gravity * Time.deltaTime;
+            movePlayer.y = fallSpeed;
+        }
+        
+    }
 
-                    Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-
-                    rb.AddForce(moveDir.normalized * movementSpeed * 5f);
-                }
-                break;
-
-            case CameraType.Combat:
-                
-                camExploration.SetActive(false);
-                camCombat.SetActive(true);
-
-                Vector3 direction = transform.forward * verticalInput + transform.right * horizontalInput;
-                rb.AddForce(direction.normalized * movementSpeed * 5f);
-
-                Quaternion lookRotation = Quaternion.Euler(0f, cam.eulerAngles.y, 0f);
-                transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-                break;
+    void PlayerControlls()
+    {
+        if (player.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            fallSpeed = jumpForce;
+            movePlayer.y = fallSpeed;
         }
     }
+
+    
 }
