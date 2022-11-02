@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     Vector3 camForward;
     Vector3 camRight;
 
+    Animator anim;
+
     public enum CameraType
     {
         Exploration,
@@ -45,12 +47,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
         speed = walkSpeed;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-
         PlayerMovement();
     }
 
@@ -61,6 +63,8 @@ public class PlayerController : MonoBehaviour
 
         playerInput = new Vector3(horizontalInput, 0, verticalInput);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
+
+        anim.SetFloat("PlayerMoveVelocity", playerInput.magnitude * speed);
 
         if (Input.GetButton("Fire2")) SetCameraType(CameraType.Combat);
         else SetCameraType(CameraType.Exploration);
@@ -129,12 +133,15 @@ public class PlayerController : MonoBehaviour
         {
             fallSpeed = -gravity * Time.deltaTime;
             movePlayer.y = fallSpeed;
-        }else
+            anim.SetBool("IsGrounded", true);
+        }
+        else
         {
             fallSpeed -= gravity * Time.deltaTime;
             movePlayer.y = fallSpeed;
+            anim.SetFloat("PlayerVerticalVelocity", -player.velocity.y);
+            anim.SetBool("IsGrounded", false);
         }
-
         Slide();
     }
 
@@ -144,6 +151,7 @@ public class PlayerController : MonoBehaviour
         {
             fallSpeed = jumpForce;
             movePlayer.y = fallSpeed;
+            anim.SetTrigger("Jump");
         }
     }
 

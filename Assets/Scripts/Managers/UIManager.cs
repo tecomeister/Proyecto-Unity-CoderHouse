@@ -5,15 +5,25 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Health Orb")]
     public Image HealthOrb;
     public Text healthText;
     public float maxHealth;
     public float health;
+
+    [Header("Mana Orb")]
     public Image ManaOrb;
     public Text manaText;
     public float maxMana;
     public float mana;
-    public GameObject player;
+
+    [Header("Coin Counter")]
+    public int coins;
+    public Text coinsText;
+
+
+    [Header("Player")]
+    [SerializeField] GameObject player;
 
     void Start()
     {
@@ -21,6 +31,7 @@ public class UIManager : MonoBehaviour
         health = player.GetComponent<PlayerHealth>().health;
         mana = player.GetComponent<PlayerHealth>().mana;
         maxMana = player.GetComponent<PlayerHealth>().maxMana;
+        coins = 0;
     }
 
     void Update()
@@ -28,6 +39,7 @@ public class UIManager : MonoBehaviour
         if(player != null)
         {
             HealthUI();
+            CoinsUI();
         }
 
     }
@@ -40,5 +52,15 @@ public class UIManager : MonoBehaviour
         manaText.text = mana + "/" + maxMana;
         HealthOrb.fillAmount = health / maxHealth;
         ManaOrb.fillAmount = mana / maxMana;
+    }
+
+    void CoinsUI()
+    {
+        coinsText.text = coins.ToString();
+    }
+
+    public void UpdateCoins(int coinsAmmount)
+    {
+        coins += coinsAmmount;
     }
 }
