@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] float health;
-    [SerializeField] float maxHealth = 5;
-    [SerializeField] int mana;
-    [SerializeField] int maxMana = 100;
+    public int health;
+    public int maxHealth = 5;
+    public int mana;
+    public int maxMana = 100;
 
     bool invincible = false;
     [SerializeField] float invincibilityTime = 1f;
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damageAmmount)
+    public void TakeDamage(int damageAmmount)
     {
         if(!invincible && health > 0)
         {
