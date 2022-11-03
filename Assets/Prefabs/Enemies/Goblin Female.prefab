@@ -434,6 +434,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3790173515957902569}
   - component: {fileID: 3790173515950716589}
+  - component: {fileID: 2045559526}
+  - component: {fileID: 2045559525}
+  - component: {fileID: 2045559522}
   m_Layer: 0
   m_Name: Goblin Female
   m_TagString: Untagged
@@ -468,7 +471,7 @@ Animator:
   m_GameObject: {fileID: 3790173515958010725}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7480a3cdff7ef94ab720079b38ce1b3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -478,6 +481,57 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &2045559526
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790173515958010725}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 116
+  m_CollisionDetection: 1
+--- !u!136 &2045559525
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790173515958010725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18229628
+  m_Height: 1.8890823
+  m_Direction: 1
+  m_Center: {x: -0.008586884, y: 0.9502874, z: 0}
+--- !u!114 &2045559522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790173515958010725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c368393e060a844d9ec1bcab94b9c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rutina: 0
+  cronometro: 0
+  animacion: {fileID: 0}
+  angulo: {x: 0, y: 0, z: 0, w: 0}
+  grado: 0
+  target: {fileID: 0}
+  ataque: 0
+  armaCollider: {fileID: 6569054461719369527}
+  shooter: 0
 --- !u!1 &3790173515958012057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,8 +2218,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d6675a7e4e281ed4a8d05189c67a52d2, type: 3}
 --- !u!1 &5074472433286697486 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 117684, guid: d6675a7e4e281ed4a8d05189c67a52d2,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 117684, guid: d6675a7e4e281ed4a8d05189c67a52d2, type: 3}
   m_PrefabInstance: {fileID: 5074472433286715834}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &6569054461719369527
@@ -2177,13 +2230,25 @@ BoxCollider:
   m_GameObject: {fileID: 5074472433286697486}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.14460713, y: 0.667551, z: 0.25244635}
   m_Center: {x: 0.00084138464, y: 0.41507554, z: 0.014335341}
+--- !u!114 &1629669836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074472433286697486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a0e732922ee6748b4279d2986e24f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmmount: 10
 --- !u!4 &5074472433287112170 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 408656, guid: d6675a7e4e281ed4a8d05189c67a52d2,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 408656, guid: d6675a7e4e281ed4a8d05189c67a52d2, type: 3}
   m_PrefabInstance: {fileID: 5074472433286715834}
   m_PrefabAsset: {fileID: 0}
