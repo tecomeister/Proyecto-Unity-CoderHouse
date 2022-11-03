@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSpell : MonoBehaviour
 {
+    public int damage = 1;
+
     Rigidbody rb;
     [SerializeField] float speed = 10f;
 
@@ -14,5 +16,13 @@ public class PlayerSpell : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.forward * speed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyController>().Damage(damage);
+        }
     }
 }
