@@ -12,8 +12,13 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] bool ataque;
     [SerializeField] Collider armaCollider;
+    [SerializeField] bool shooter = false;
+    [SerializeField] int lifeEnemy;
+    [SerializeField] int maxLiveEnemy;
+    [SerializeField] bool stun;
     void Start()
     {
+        lifeEnemy = maxLiveEnemy;
         animacion = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player");
     }
@@ -61,8 +66,11 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            
+
             if (Vector3.Distance(transform.position, target.transform.position) > 1 && !ataque)
             {
+
                 var lookPos = target.transform.position - transform.position;
                 lookPos.y = 0;
                 var rotation = Quaternion.LookRotation(lookPos);
@@ -70,34 +78,44 @@ public class EnemyController : MonoBehaviour
                 animacion.SetBool("walk", false);
                 animacion.SetBool("run", true);
                 transform.Translate(Vector3.forward * 2 * Time.deltaTime);
-                animacion.SetBool("ataque", false);
+                animacion.SetBool("attack", false);
             }
             else
             {
+               
                 animacion.SetBool("walk", false);
                 animacion.SetBool("run", false);
 
-                animacion.SetBool("ataque", true);
+                var lookPos = target.transform.position - transform.position;
+                lookPos.y = 0;
+                var rotation = Quaternion.LookRotation(lookPos);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+                animacion.SetBool("attack", true);
                 ataque = true;
+
             }
             
-        }   
+            
+            
+        }
+        
         
     }
 
+
+
     public void FinalizarAtaque()
     {
-        animacion.SetBool("ataque", false);
+        animacion.SetBool("attack", false);
         ataque = false;
     }
 
-    public void ActivarColliderArma()
+    public void ColliderArma()
     {
-        armaCollider.enabled = true;
+        if (shooter == false)
+        {
+            armaCollider.enabled = !armaCollider.enabled;
+        }
     }
 
-    public void DesactivarArmaCollider()
-    {
-        armaCollider.enabled = false;
-    }
 }
