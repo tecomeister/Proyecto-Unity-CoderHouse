@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     Vector3 camForward;
     Vector3 camRight;
 
+    [Header("UI Elements")]
+    [SerializeField] GameObject crosshair;
+
     Animator anim;
 
     bool isAiming = false;
@@ -70,14 +73,12 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("PlayerMoveVelocity", playerInput.magnitude * speed);
 
-        anim.SetFloat("PlayerHorizontalMovement",horizontalInput);
-        anim.SetFloat("PlayerVerticalMovement", verticalInput);
-
         if (Input.GetButton("Fire2"))
         {
             SetCameraType(CameraType.Combat);
             anim.SetBool("IsAiming", true);
             isAiming = true;
+            crosshair.SetActive(true);
         }
         else
         {
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
             isAiming = false;
         }
 
-        if(isAiming = true && Input.GetButton("Fire1"))
+        if(isAiming = true && Input.GetButtonDown("Fire1"))
         {
             Debug.Log("Casteaste un spell");
             anim.SetTrigger("ThrowSpell");
