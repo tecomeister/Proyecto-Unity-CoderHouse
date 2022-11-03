@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public int mana;
     public int maxMana = 100;
 
+    Animator anim;
+
     bool invincible = false;
     [SerializeField] float invincibilityTime = 1f;
     [SerializeField] float stopTime = 0.5f;
@@ -17,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
         mana = maxMana;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
         if(!invincible && health > 0)
         {
             health -= damageAmmount;
+            anim.SetTrigger("GotHit");
             StartCoroutine(InvencibilityFrames());
             StartCoroutine(StopPlayer());
         }

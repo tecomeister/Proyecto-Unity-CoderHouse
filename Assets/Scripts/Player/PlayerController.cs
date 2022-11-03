@@ -32,11 +32,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject camCombat;
     [SerializeField] GameObject camExploration;
+    [SerializeField] Transform target;
+    [SerializeField] Transform targetAim;
     CameraType cameraType;
     Vector3 camForward;
     Vector3 camRight;
 
     Animator anim;
+
+    bool isAiming = false;
 
     public enum CameraType
     {
@@ -66,11 +70,27 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("PlayerMoveVelocity", playerInput.magnitude * speed);
 
-        if (Input.GetButton("Fire2")) SetCameraType(CameraType.Combat);
-        else SetCameraType(CameraType.Exploration);
+        anim.SetFloat("PlayerHorizontalMovement",horizontalInput);
+        anim.SetFloat("PlayerVerticalMovement", verticalInput);
 
-        if (Input.GetButton("Sprint")) speed = runSpeed;
-        else speed = walkSpeed;
+        if (Input.GetButton("Fire2"))
+        {
+            SetCameraType(CameraType.Combat);
+            anim.SetBool("IsAiming", true);
+            isAiming = true;
+        }
+        else
+        {
+            SetCameraType(CameraType.Exploration);
+            anim.SetBool("IsAiming", false);
+            isAiming = false;
+        }
+
+        if(isAiming = true && Input.GetButton("Fire1"))
+        {
+            Debug.Log("Casteaste un spell");
+            anim.SetTrigger("ThrowSpell");
+        }
     }
 
     void SetCameraType(CameraType cameraType)
@@ -84,11 +104,17 @@ public class PlayerController : MonoBehaviour
 
                 GetCamDirection();
 
+                if (Input.GetButton("Sprint")) speed = runSpeed;
+                else speed = walkSpeed;
+
                 movePlayer = playerInput.x * camRight + playerInput.z * camForward;
                 movePlayer *= speed;
 
-                player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(movePlayer), rotationSpeed * Time.deltaTime);
-
+                if (movePlayer != Vector3.zero)
+                {
+                    player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(movePlayer), rotationSpeed * Time.deltaTime);
+                }
+                
                 Gravity();
                 Jump();
 
@@ -105,7 +131,7 @@ public class PlayerController : MonoBehaviour
                 movePlayer *= speed;
 
                 Quaternion lookRotation = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y, 0f);
-                player.transform.rotation = Quaternion.Lerp(player.transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+                player.transform.rotation = Quaternion.Slerp(player.transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
 
                 Gravity();
                 Jump();
