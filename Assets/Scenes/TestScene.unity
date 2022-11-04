@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 53720266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439778352}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &53720266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +345,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174205907, guid: b5f1109b8d7b5d34e84ae1f7a26a2e6b, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 439778346}
+    - target: {fileID: 174205907, guid: b5f1109b8d7b5d34e84ae1f7a26a2e6b, type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 4712517330480451157, guid: b5f1109b8d7b5d34e84ae1f7a26a2e6b, type: 3}
       propertyPath: m_Name
       value: Goblin Shaman
@@ -340,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 4712517330480451157, guid: b5f1109b8d7b5d34e84ae1f7a26a2e6b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712517330480451157, guid: b5f1109b8d7b5d34e84ae1f7a26a2e6b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4712517330480692543, guid: b5f1109b8d7b5d34e84ae1f7a26a2e6b, type: 3}
       propertyPath: m_RootOrder
@@ -456,7 +480,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148939511}
-  m_LocalRotation: {x: 0.031950954, y: -0.00000001733143, z: 5.540387e-10, w: 0.9994895}
+  m_LocalRotation: {x: 0.031950966, y: -0.000000017331429, z: 5.540387e-10, w: 0.9994895}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1548,7 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: 0
-  menu: {fileID: 0}
+  menu: {fileID: 1989387938}
 --- !u!1 &443131553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2130,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 723289173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439778352}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &723289173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2419,7 +2455,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 871727509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439778352}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &871727509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2541,7 +2589,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 941129596}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439778352}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &941129596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,7 +2723,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 965936524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439778352}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &965936524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,7 +2813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.000015258789}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975265131
@@ -3330,8 +3402,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1663712024, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 439778346}
+    - target: {fileID: 1663712024, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
       propertyPath: range
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663712024, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
+      propertyPath: health
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1262968888893070164, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
       propertyPath: m_Size.x
@@ -3404,6 +3484,10 @@ PrefabInstance:
     - target: {fileID: 3898959213902008044, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
       propertyPath: m_Name
       value: Goblin Male
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898959213902008044, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6f2cc840f955a4cb380e14cb4ba74a, type: 3}
@@ -3741,7 +3825,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385362293}
-  m_LocalRotation: {x: -0.0043765204, y: -6.443976e-10, z: -2.820247e-12, w: 0.99999046}
+  m_LocalRotation: {x: -0.004376519, y: -0.0000000011920269, z: -5.21698e-12, w: 0.99999046}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4861,7 +4945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1860592831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439778352}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1860592831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4907,6 +5003,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2045559522, guid: 46c4ecf8744c268458a3ed8c36d94786, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 439778346}
+    - target: {fileID: 2045559522, guid: 46c4ecf8744c268458a3ed8c36d94786, type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 3790173515957902569, guid: 46c4ecf8744c268458a3ed8c36d94786, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4958,6 +5062,10 @@ PrefabInstance:
     - target: {fileID: 3790173515958010725, guid: 46c4ecf8744c268458a3ed8c36d94786, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790173515958010725, guid: 46c4ecf8744c268458a3ed8c36d94786, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c4ecf8744c268458a3ed8c36d94786, type: 3}
