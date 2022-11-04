@@ -42657,14 +42657,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 1
   m_Events:
   - time: 0.6226087
-    functionName: FootR
+    functionName: WalkFootstep
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.3808696
-    functionName: FootL
+    functionName: WalkFootstep
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

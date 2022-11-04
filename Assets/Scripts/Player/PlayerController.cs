@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         speed = walkSpeed;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -109,8 +110,7 @@ public class PlayerController : MonoBehaviour
             {
                 case CameraType.Exploration:
 
-                    camExploration.SetActive(true);
-                    camCombat.SetActive(false);
+                    camExploration.GetComponent<CinemachineCameraOffset>().enabled = false;
 
                     GetCamDirection();
 
@@ -132,8 +132,8 @@ public class PlayerController : MonoBehaviour
                     break;
 
                 case CameraType.Combat:
-                    camExploration.SetActive(false);
-                    camCombat.SetActive(true);
+
+                    camExploration.GetComponent<CinemachineCameraOffset>().enabled = true;
 
                     GetCamDirection();
 

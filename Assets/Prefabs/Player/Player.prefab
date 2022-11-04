@@ -1043,6 +1043,7 @@ GameObject:
   - component: {fileID: 217621915264093266}
   - component: {fileID: 5574203914661569700}
   - component: {fileID: 2074352001604024094}
+  - component: {fileID: 91954071}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1118,7 +1119,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1226,8 +1227,11 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   camCombat: {fileID: 0}
   camExploration: {fileID: 0}
-  target: {fileID: 0}
-  targetAim: {fileID: 378479898}
+  SpawnPoint: {fileID: 1406034160895813863}
+  aimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  bullet: {fileID: 5518279115205934718, guid: 5cbca4e94c86ce343b8b5ffefc19cb54, type: 3}
   crosshair: {fileID: 0}
 --- !u!114 &2074352001604024094
 MonoBehaviour:
@@ -1241,12 +1245,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e923932400ddd354c9f46848aeed09f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 100
-  mana: 0
-  maxMana: 100
   invincibilityTime: 1
   stopTime: 0.2
+--- !u!114 &91954071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230303013309892082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed5761964cf6ab408864d9660b019d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkFootsteps:
+  - {fileID: 8300000, guid: 7303f1518909370438ae45543d710d13, type: 3}
+  - {fileID: 8300000, guid: 416cfd4499316904097dc306a915386d, type: 3}
+  - {fileID: 8300000, guid: f8ec33c010541aa48b6e819587f16226, type: 3}
+  - {fileID: 8300000, guid: dddf9601050eb944d9890e003c67088e, type: 3}
+  - {fileID: 8300000, guid: 57fc3262f6363b647b6cc855f6b3e38a, type: 3}
+  runFootsteps:
+  - {fileID: 8300000, guid: 4d412e5271986214e845f038dfeb89a2, type: 3}
+  - {fileID: 8300000, guid: 09c0a1b0af3989d4280daae5709ea947, type: 3}
+  - {fileID: 8300000, guid: 19afdc6c41856774bb2c9862f4816ab9, type: 3}
+  - {fileID: 8300000, guid: 5262385f90acb494c8b9e7a6bf5efead, type: 3}
+  - {fileID: 8300000, guid: 716e1452643d78d4991345d45189f1f8, type: 3}
+  jumps:
+  - {fileID: 8300000, guid: f0c7ef39528f95442a7796a6c593c892, type: 3}
+  - {fileID: 8300000, guid: c202e74a258af1842a2e549b4b821ad5, type: 3}
+  hit: {fileID: 8300000, guid: ac3d74739e151e24dbb92644b6e076a6, type: 3}
+  death: {fileID: 8300000, guid: e4e0fface9a1ff841858ab25ad49c1cd, type: 3}
+  attack: {fileID: 8300000, guid: 9bb7cac28be5ce54990df1fab629e755, type: 3}
 --- !u!1 &3230303013309892798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,7 +2005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5105863365509517808}
   m_LocalRotation: {x: -0.647107, y: -0.19282931, z: 0.005094051, w: 0.737593}
-  m_LocalPosition: {x: -24, y: 127.1, z: 12.7}
+  m_LocalPosition: {x: -27.6, y: 148.5, z: 25.4}
   m_LocalScale: {x: 133.33328, y: 133.3333, z: 133.33333}
   m_ConstrainProportionsScale: 0
   m_Children: []

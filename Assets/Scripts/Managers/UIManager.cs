@@ -27,10 +27,10 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        maxHealth = player.GetComponent<PlayerHealth>().maxHealth;
-        health = player.GetComponent<PlayerHealth>().health;
-        mana = player.GetComponent<PlayerHealth>().mana;
-        maxMana = player.GetComponent<PlayerHealth>().maxMana;
+        maxHealth = GameManager.instance.maxHealth;
+        health = GameManager.instance.health;
+        mana = GameManager.instance.mana;
+        maxMana = GameManager.instance.maxMana;
         coins = 0;
     }
 
@@ -46,8 +46,8 @@ public class UIManager : MonoBehaviour
 
     void HealthUI()
     {
-        health = player.GetComponent<PlayerHealth>().health;
-        mana = player.GetComponent<PlayerHealth>().mana;
+        health = GameManager.instance.health;
+        mana = GameManager.instance.mana;
         healthText.text = health + "/" + maxHealth;
         manaText.text = mana + "/" + maxMana;
         HealthOrb.fillAmount = health / maxHealth;
