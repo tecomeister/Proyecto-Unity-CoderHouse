@@ -14,10 +14,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Collider armaCollider;
     [SerializeField] bool shooter = false;
     [SerializeField] int health;
-    [SerializeField] bool stun;
+    [SerializeField] GameObject ui;
+    public int drop; 
     void Start()
     {
- 
+        drop = Random.Range(0, 5);
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player");
     }
@@ -28,6 +29,7 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            ui.GetComponent<UIManager>().UpdateCoins(drop);
         }
 
         if (target != null)
@@ -111,7 +113,7 @@ public class EnemyController : MonoBehaviour
         if (health > 0)
         {
             health -= damageAmmount;
-            anim.Play("Hit");
+            anim.SetTrigger("hit");
         }
     }
 
