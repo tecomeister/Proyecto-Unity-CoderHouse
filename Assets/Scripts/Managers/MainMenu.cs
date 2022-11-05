@@ -5,13 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Animator crossfade;
+    public string nameOfScene;
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        nameOfScene = sceneName;
+
+        StartCoroutine(LoadLevel());
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator LoadLevel()
+    {
+        crossfade.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene(nameOfScene);
     }
 }

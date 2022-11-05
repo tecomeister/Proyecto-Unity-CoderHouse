@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   maxHealth: 100
-  health: 0
-  mana: 0
+  health: 100
+  mana: 100
   maxMana: 100
 --- !u!114 &7689920388885760773
 MonoBehaviour:
@@ -66,6 +66,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7689920388885760772}
   battleSource: {fileID: 7689920388885760775}
+  musicClip: {fileID: 8300000, guid: cbaf56803c03887488708c29b729dd09, type: 3}
+  battleClip: {fileID: 8300000, guid: 0db821420e779eb4c83fa2435097bf8e, type: 3}
 --- !u!82 &7689920388885760772
 AudioSource:
   m_ObjectHideFlags: 0
@@ -77,10 +79,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -173,10 +175,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

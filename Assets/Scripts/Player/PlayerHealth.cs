@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    Animator anim;
-    bool invincible = false;
-    [SerializeField] float invincibilityTime = 1f;
-    [SerializeField] float stopTime = 0.5f;
+    [SerializeField] private float invincibilityTime = 1f;
+    [SerializeField] private float stopTime = 0.5f;
+    [SerializeField] private GameObject ui;
+    [SerializeField] private GameObject deathMenu;
+    private Animator anim;
+    private CharacterController characterController;
+    private Rigidbody[] rigidbodies;
+    private bool invincible = false;
 
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
+        rigidbodies = transform.GetComponentsInChildren<Rigidbody>();
+        EnableRagdoll(false);
     }
 
     void Update()
@@ -19,8 +26,25 @@ public class PlayerHealth : MonoBehaviour
 
         if (GameManager.instance.health <= 0)
         {
-            Destroy(gameObject);
+            GetComponent<PlayerSFX>().Death();
+            deathMenu.SetActive(true);
+            
+            EnableRagdoll(true);
         }
+    }
+
+    void EnableRagdoll(bool enabled)
+    {
+        bool isKinematic = !enabled;
+        foreach (Rigidbody rigidbody in rigidbodies)
+        {
+            rigidbody.isKinematic = isKinematic;
+        }
+        ui.GetComponent<PauseMenu>().enabled = !enabled;
+        anim.enabled = !enabled;
+        characterController.enabled = !enabled;
+        GetComponent<PlayerController>().enabled = !enabled;
+        this.enabled = !enabled;
     }
 
     public void TakeDamage(int damageAmmount)

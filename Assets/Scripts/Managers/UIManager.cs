@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
 
     [Header("Player")]
-    [SerializeField] GameObject player;
+    [SerializeField] private GameObject player;
 
     void Start()
     {
