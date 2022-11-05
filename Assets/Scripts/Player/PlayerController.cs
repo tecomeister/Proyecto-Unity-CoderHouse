@@ -4,48 +4,56 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float horizontalInput;
-    float verticalInput;
-    CharacterController player;
+    private CharacterController player;
+    private float horizontalInput;
+    private float verticalInput;
+    private Vector3 playerInput;
+    private Vector3 movePlayer;
+    private Animator anim;
+    private bool isAiming = false;
 
     [Header("Speed")]
     public float walkSpeed = 1f;
-    [SerializeField] float runSpeed = 2f;
-    [SerializeField] float rotationSpeed = 10f;
-    [SerializeField] float slidingSpeed = 2f;
+    [SerializeField] private float runSpeed = 2f;
+    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float slidingSpeed = 2f;
     [HideInInspector] public float speed;
 
     [Header("Gravity")]
-    [SerializeField] float gravity = 9f;
-    [SerializeField] float jumpForce;
-    float fallSpeed;
-    bool isOnSlope = false;
-    Vector3 normalFace;
-    [SerializeField] float slopeDownwardsForce;
-    [SerializeField] float pushForce = 2f;
-    float targetMass;
+    [SerializeField] private float gravity = 9f;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float slopeDownwardsForce;
+    [SerializeField] private float pushForce = 2f;
+    private float fallSpeed;
+    private bool isOnSlope = false;
+    private Vector3 normalFace;
+    private float targetMass;
 
-    Vector3 playerInput;
-    Vector3 movePlayer;
+    [Header("Actions")]
+    private bool canShoot = true;
+    private float timeToShoot;
+    private float timeToShootLeft;
+    private bool canShield = true;
+    private float timeToShield;
+    private float timeToShieldLeft;
+
 
     [Header("Camera")]
-    [SerializeField] Camera mainCamera;
-    [SerializeField] GameObject camCombat;
-    [SerializeField] GameObject camExploration;
-    [SerializeField] Transform SpawnPoint;
-    [SerializeField] LayerMask aimColliderLayerMask = new LayerMask();
-    [SerializeField] GameObject bullet;
-    CameraType cameraType;
-    Vector3 camForward;
-    Vector3 camRight;
-    Vector3 mouseWorldPos;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject freeLookCam;
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
+    [SerializeField] private GameObject bullet;
+    private CameraType cameraType;
+    private Vector3 camForward;
+    private Vector3 camRight;
+    private Vector3 mouseWorldPos;
 
-    [Header("UI Elements")]
-    [SerializeField] GameObject crosshair;
-
-    Animator anim;
-
-    bool isAiming = false;
+    [Header("Other")]
+    [SerializeField] private GameObject crosshair;
+    [SerializeField] private GameObject shield;
+    [SerializeField] private GameObject shieldSpawnPoint;
+    private GameObject ui;
 
     public enum CameraType
     {
@@ -59,11 +67,17 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         speed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
+        ui = GameObject.FindGameObjectWithTag("UI");
     }
 
     void Update()
     {
-        PlayerMovement();
+        if(ui.GetComponent<PauseMenu>().pause != true)
+        {
+            PlayerMovement();
+            ShootTimer();
+            ShieldTimer();
+        }
     }
 
     void PlayerMovement()
@@ -99,116 +113,157 @@ public class PlayerController : MonoBehaviour
             crosshair.SetActive(false);
         }
 
-        if (isAiming = true && Input.GetButtonDown("Fire1"))
+        if (isAiming == true && canShoot == true && Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("ThrowSpell");
+            ResetShootTimer();
         }
 
-        void SetCameraType(CameraType cameraType)
+        if (isAiming == true && canShield == true && Input.GetKeyDown(KeyCode.E))
         {
-            switch (cameraType)
-            {
-                case CameraType.Exploration:
-
-                    camExploration.GetComponent<CinemachineCameraOffset>().enabled = false;
-
-                    GetCamDirection();
-
-                    if (Input.GetButton("Sprint")) speed = runSpeed;
-                    else speed = walkSpeed;
-
-                    movePlayer = playerInput.x * camRight + playerInput.z * camForward;
-                    movePlayer *= speed;
-
-                    if (movePlayer != Vector3.zero)
-                    {
-                        player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(movePlayer), rotationSpeed * Time.deltaTime);
-                    }
-
-                    Gravity();
-                    Jump();
-
-                    player.Move(movePlayer * Time.deltaTime);
-                    break;
-
-                case CameraType.Combat:
-
-                    camExploration.GetComponent<CinemachineCameraOffset>().enabled = true;
-
-                    GetCamDirection();
-
-                    movePlayer = playerInput.x * camRight + playerInput.z * camForward;
-                    movePlayer *= speed;
-
-                    Quaternion lookRotation = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y, 0f);
-                    player.transform.rotation = Quaternion.Slerp(player.transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
-
-                    Gravity();
-                    Jump();
-
-                    player.Move(movePlayer * Time.deltaTime);
-                    break;
-            }
+            Instantiate(shield, shieldSpawnPoint.transform.position, shieldSpawnPoint.transform.rotation);
+            ResetShieldTimer();
         }
+    }
 
-        void GetCamDirection()
+    void SetCameraType(CameraType cameraType)
+    {
+        switch (cameraType)
         {
-            camForward = mainCamera.transform.forward;
-            camRight = mainCamera.transform.right;
+            case CameraType.Exploration:
 
-            camForward.y = 0;
-            camRight.y = 0;
+                freeLookCam.GetComponent<CinemachineCameraOffset>().enabled = false;
 
-            camForward = camForward.normalized;
-            camRight = camRight.normalized;
+                GetCamDirection();
+
+                if (Input.GetButton("Sprint")) speed = runSpeed;
+                else speed = walkSpeed;
+
+                movePlayer = playerInput.x * camRight + playerInput.z * camForward;
+                movePlayer *= speed;
+
+                if (movePlayer != Vector3.zero)
+                {
+                    player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(movePlayer), rotationSpeed * Time.deltaTime);
+                }
+
+                Gravity();
+                Jump();
+
+                player.Move(movePlayer * Time.deltaTime);
+                break;
+
+            case CameraType.Combat:
+
+                freeLookCam.GetComponent<CinemachineCameraOffset>().enabled = true;
+
+                GetCamDirection();
+
+                movePlayer = playerInput.x * camRight + playerInput.z * camForward;
+                movePlayer *= speed;
+
+                Quaternion lookRotation = Quaternion.Euler(0f, mainCamera.transform.eulerAngles.y, 0f);
+                player.transform.rotation = Quaternion.Slerp(player.transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+
+                Gravity();
+                Jump();
+
+                player.Move(movePlayer * Time.deltaTime);
+                break;
         }
+    }
 
-        void Gravity()
+    void ShootTimer()
+    {
+        timeToShootLeft -= Time.deltaTime;
+
+        if(timeToShootLeft <= 0)
         {
-            if (player.isGrounded)
-            {
-                fallSpeed = -gravity * Time.deltaTime;
-                movePlayer.y = fallSpeed;
-                anim.SetBool("IsGrounded", true);
-            }
-            else
-            {
-                fallSpeed -= gravity * Time.deltaTime;
-                movePlayer.y = fallSpeed;
-                anim.SetFloat("PlayerVerticalVelocity", -player.velocity.y);
-                anim.SetBool("IsGrounded", false);
-            }
-            Slide();
+            timeToShootLeft = 0;
+            canShoot = true;
         }
+    }
 
-        void Jump()
+    void ResetShootTimer()
+    {
+        timeToShootLeft = timeToShoot;
+        canShoot = false;
+    }
+
+    void ShieldTimer()
+    {
+        timeToShieldLeft -= Time.deltaTime;
+
+        if (timeToShieldLeft <= 0)
         {
-            if (player.isGrounded && Input.GetButtonDown("Jump"))
-            {
-                fallSpeed = jumpForce;
-                movePlayer.y = fallSpeed;
-                anim.SetTrigger("Jump");
-            }
+            timeToShieldLeft = 0;
+            canShield = true;
         }
+    }
 
-        void Slide()
+    void ResetShieldTimer()
+    {
+        timeToShieldLeft = timeToShield;
+        canShield = false;
+    }
+
+    void GetCamDirection()
+    {
+        camForward = mainCamera.transform.forward;
+        camRight = mainCamera.transform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+    }
+
+    void Gravity()
+    {
+        if (player.isGrounded)
         {
-            isOnSlope = Vector3.Angle(Vector3.up, normalFace) >= player.slopeLimit;
+            fallSpeed = -gravity * Time.deltaTime;
+            movePlayer.y = fallSpeed;
+            anim.SetBool("IsGrounded", true);
+        }
+        else
+        {
+            fallSpeed -= gravity * Time.deltaTime;
+            movePlayer.y = fallSpeed;
+            anim.SetFloat("PlayerVerticalVelocity", -player.velocity.y);
+            anim.SetBool("IsGrounded", false);
+        }
+        Slide();
+    }
 
-            if (isOnSlope)
-            {
-                movePlayer.x += ((1f - normalFace.y) * normalFace.x) * slidingSpeed;
-                movePlayer.z += ((1f - normalFace.y) * normalFace.z) * slidingSpeed;
-                movePlayer.y -= slopeDownwardsForce;
-            }
+    void Jump()
+    {
+        if (player.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            fallSpeed = jumpForce;
+            movePlayer.y = fallSpeed;
+            anim.SetTrigger("Jump");
+        }
+    }
+
+    void Slide()
+    {
+        isOnSlope = Vector3.Angle(Vector3.up, normalFace) >= player.slopeLimit;
+
+        if (isOnSlope)
+        {
+            movePlayer.x += ((1f - normalFace.y) * normalFace.x) * slidingSpeed;
+            movePlayer.z += ((1f - normalFace.y) * normalFace.z) * slidingSpeed;
+            movePlayer.y -= slopeDownwardsForce;
         }
     }
 
     private void Shoot()
     {
-        Vector3 aimDir = (mouseWorldPos - SpawnPoint.position).normalized;
+        Vector3 aimDir = (mouseWorldPos - spawnPoint.position).normalized;
 
-        Instantiate(bullet, SpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
+        Instantiate(bullet, spawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

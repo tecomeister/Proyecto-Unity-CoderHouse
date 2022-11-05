@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Movable
   - Enemy
+  - UI
+  - Breakable
   layers:
   - Default
   - TransparentFX
