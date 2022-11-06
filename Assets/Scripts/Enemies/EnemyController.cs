@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private Animator anim;
-    [SerializeField] private GameObject target;
+    [Header("Requirements")]
     [SerializeField] private Collider weaponCol;
+    private Animator anim;
+    private GameObject target;
+    private Rigidbody rb;
+    private GameObject ui;
+
+    [Header("Stats")]
     [SerializeField] private int health;
-    [SerializeField] private GameObject ui;
-    [SerializeField] private Transform[] waypoints;
-    [SerializeField] private CapsuleCollider enemyCollider;
+    [SerializeField] private int walkSpeed;
+    [SerializeField] private int runSpeed;
     public int drop;
-    public int speed, walkSpeed, runSpeed;
-    public float maxRadiusTarget, minRadiusTarget;
-    private Quaternion angle;
-    private float angleDegrees;
     private bool attacking;
-    private Rigidbody[] rigidbodies;
+    private int speed;
     private EnemyState enemyState;
+
+    [Header("Patroll")]
+    [SerializeField] private Transform[] waypoints;
     private int waypointIndex;
     private float dist;
+
+    [Header("Chase Area")]
+    [SerializeField] private float maxRadiusTarget;
+    [SerializeField] private float minRadiusTarget;
+
 
     public enum EnemyState
     {
@@ -31,28 +39,25 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+        target = GameObject.FindWithTag("Player");
+        ui = GameObject.FindGameObjectWithTag("UI");
+        rb = GetComponent<Rigidbody>();
         speed = walkSpeed;
+        drop = Random.Range(0, 5);
         waypointIndex = 0;
         transform.LookAt(waypoints[waypointIndex].position);
-        rigidbodies = transform.GetComponentsInChildren<Rigidbody>();
-        SetEnabled(false);
-        drop = Random.Range(0, 5);
-        target = GameObject.FindWithTag("Player");
     }
-
-
-    
 
     // Update is called once per frame
     void Update()
     {
-        
         if (health <= 0)
         {
             GetComponent<EnemySFX>().Death();
-            enemyCollider.enabled = false;
-            SetEnabled(true);
             ui.GetComponent<UIManager>().UpdateCoins(drop);
+            anim.SetTrigger("dead");
+            rb.isKinematic = true;
             this.enabled = false;
         }
 
@@ -60,12 +65,10 @@ public class EnemyController : MonoBehaviour
         {
             EnemyBehaviour();
         }
-
     }
 
     private void EnemyBehaviour()
     {
-       
         if (Vector3.Distance(transform.position, target.transform.position) > maxRadiusTarget)
         {
             EnemyStates(EnemyState.Patrol);
@@ -78,9 +81,6 @@ public class EnemyController : MonoBehaviour
         {
             EnemyStates(EnemyState.Attack);
         }
-
-
-
     }
 
     private void EnemyStates(EnemyState enemyState)
@@ -96,6 +96,8 @@ public class EnemyController : MonoBehaviour
                 }
                 anim.SetBool("walk", true);
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                Quaternion lookRotation = Quaternion.LookRotation(waypoints[waypointIndex].position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 0.05f);
                 break;
 
             case EnemyState.Chase:
@@ -103,7 +105,8 @@ public class EnemyController : MonoBehaviour
                 var lookPos = target.transform.position - transform.position;
                 lookPos.y = 0;
                 var rotation = Quaternion.LookRotation(lookPos);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 3);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.05f);
+                //transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 3);
                 anim.SetBool("walk", false);
                 anim.SetBool("run", true);
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -116,21 +119,11 @@ public class EnemyController : MonoBehaviour
                 lookPos = target.transform.position - transform.position;
                 lookPos.y = 0;
                 rotation = Quaternion.LookRotation(lookPos);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.05f);
                 anim.SetBool("attack", true);
                 attacking = true;
                 break;
         }
-    }
-    void SetEnabled(bool enabled)
-    {
-        bool isKinematic = !enabled;
-        foreach (Rigidbody rigidbody in rigidbodies)
-        {
-            rigidbody.isKinematic = isKinematic;
-        }
-
-        anim.enabled = !enabled;
     }
     void IncreaseIndex()
     {
@@ -139,7 +132,6 @@ public class EnemyController : MonoBehaviour
         {
             waypointIndex = 0;
         }
-        transform.LookAt(waypoints[waypointIndex].position);
     }
 
     public void Damage(int damageAmmount)

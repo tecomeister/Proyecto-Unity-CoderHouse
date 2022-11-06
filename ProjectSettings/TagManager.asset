@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - UI
   - Breakable
+  - InvisWalls
   layers:
   - Default
   - TransparentFX

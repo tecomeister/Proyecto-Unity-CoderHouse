@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float stopTime = 0.5f;
     [SerializeField] private GameObject ui;
     [SerializeField] private GameObject deathMenu;
+    [SerializeField] private GameObject cameraPlayer;
     private Animator anim;
     private CharacterController characterController;
     private Rigidbody[] rigidbodies;
@@ -28,7 +29,8 @@ public class PlayerHealth : MonoBehaviour
         {
             GetComponent<PlayerSFX>().Death();
             deathMenu.SetActive(true);
-            
+            gameObject.tag = ("Untagged");
+            cameraPlayer.SetActive(false);
             EnableRagdoll(true);
         }
     }
@@ -44,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
         anim.enabled = !enabled;
         characterController.enabled = !enabled;
         GetComponent<PlayerController>().enabled = !enabled;
+
         this.enabled = !enabled;
     }
 

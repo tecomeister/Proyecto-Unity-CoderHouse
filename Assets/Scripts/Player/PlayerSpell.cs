@@ -31,6 +31,9 @@ public class PlayerSpell : MonoBehaviour
             Instantiate(fx, transform.position, Quaternion.identity);
             collision.gameObject.GetComponent<BreakableObjects>().Damage(damage);
             Destroy(gameObject);
+        }else if (collision.gameObject.CompareTag("InvisWalls"))
+        {
+            Destroy(gameObject);
         }
         else
         {

@@ -30,12 +30,15 @@ public class PlayerController : MonoBehaviour
     private float targetMass;
 
     [Header("Actions")]
-    private bool canShoot = true;
-    private float timeToShoot;
+    [SerializeField] private bool canShoot = true;
+    private float timeToShoot = 1.5f;
     private float timeToShootLeft;
+    private float timeToRechargeMana = 1.5f;
+    private float timeToRechargeManaLeft;
     private bool canShield = true;
-    private float timeToShield;
+    private float timeToShield = 8f;
     private float timeToShieldLeft;
+    private bool canSlowDown = false;
 
 
     [Header("Camera")]
@@ -77,6 +80,11 @@ public class PlayerController : MonoBehaviour
             PlayerMovement();
             ShootTimer();
             ShieldTimer();
+
+            if(GameManager.instance.mana != GameManager.instance.maxMana)
+            {
+                ManaTimer();
+            }
         }
     }
 
@@ -115,12 +123,14 @@ public class PlayerController : MonoBehaviour
 
         if (isAiming == true && canShoot == true && Input.GetButtonDown("Fire1"))
         {
-            anim.SetTrigger("ThrowSpell");
             ResetShootTimer();
+            GameManager.instance.mana -= 15;
+            anim.SetTrigger("ThrowSpell");
         }
 
-        if (isAiming == true && canShield == true && Input.GetKeyDown(KeyCode.E))
+        if (isAiming == true && canShield == true && Input.GetKeyDown(KeyCode.E) && player.isGrounded)
         {
+            GameManager.instance.mana -= 10;
             Instantiate(shield, shieldSpawnPoint.transform.position, shieldSpawnPoint.transform.rotation);
             ResetShieldTimer();
         }
@@ -177,10 +187,15 @@ public class PlayerController : MonoBehaviour
     {
         timeToShootLeft -= Time.deltaTime;
 
-        if(timeToShootLeft <= 0)
+        if(timeToShootLeft <= 0 && GameManager.instance.mana >= 15)
         {
             timeToShootLeft = 0;
             canShoot = true;
+        }
+        else if(timeToShootLeft <= 0 && GameManager.instance.mana <= 10)
+        {
+            timeToShootLeft = 0;
+            canShoot = false;
         }
     }
 
@@ -198,6 +213,22 @@ public class PlayerController : MonoBehaviour
         {
             timeToShieldLeft = 0;
             canShield = true;
+        }
+    }
+
+    void ResetManaTimer()
+    {
+        timeToRechargeManaLeft = timeToRechargeMana;
+    }
+
+    void ManaTimer()
+    {
+        timeToRechargeManaLeft -= Time.deltaTime;
+
+        if (timeToRechargeManaLeft <= 0 && GameManager.instance.mana != GameManager.instance.maxMana)
+        {
+            ResetManaTimer();
+            GameManager.instance.mana += 5;
         }
     }
 
@@ -226,6 +257,26 @@ public class PlayerController : MonoBehaviour
             fallSpeed = -gravity * Time.deltaTime;
             movePlayer.y = fallSpeed;
             anim.SetBool("IsGrounded", true);
+            Time.timeScale = 1;
+            canSlowDown = false;
+        } else if (!player.isGrounded && isAiming == true && canSlowDown == true)
+        {
+            anim.SetTrigger("Jump");
+            fallSpeed -= (gravity / 2) * Time.deltaTime;
+            movePlayer.y = fallSpeed;
+            anim.SetFloat("PlayerVerticalVelocity", -player.velocity.y);
+            anim.SetBool("IsGrounded", false);
+            Time.timeScale = 0.3f;
+
+            if(movePlayer.y <= 0.55)
+            {
+                fallSpeed -= gravity * Time.deltaTime;
+                movePlayer.y = fallSpeed;
+                anim.SetFloat("PlayerVerticalVelocity", -player.velocity.y);
+                anim.SetBool("IsGrounded", false);
+                Time.timeScale = 1;
+                canSlowDown = false;
+            }
         }
         else
         {
@@ -233,6 +284,7 @@ public class PlayerController : MonoBehaviour
             movePlayer.y = fallSpeed;
             anim.SetFloat("PlayerVerticalVelocity", -player.velocity.y);
             anim.SetBool("IsGrounded", false);
+            Time.timeScale = 1;
         }
         Slide();
     }
@@ -244,6 +296,7 @@ public class PlayerController : MonoBehaviour
             fallSpeed = jumpForce;
             movePlayer.y = fallSpeed;
             anim.SetTrigger("Jump");
+            canSlowDown = true;
         }
     }
 

@@ -128,4 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestSpawnPoint: {fileID: 0}
-  chest: {fileID: 133660, guid: 971412afe90b27640b1c78c0641deec9, type: 3}
+  chest: {fileID: 5518125807642487509, guid: dfaa97d0ee34e5145b0269128869931a, type: 3}
