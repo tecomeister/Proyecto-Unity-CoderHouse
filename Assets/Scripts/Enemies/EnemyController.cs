@@ -57,8 +57,10 @@ public class EnemyController : MonoBehaviour
             GetComponent<EnemySFX>().Death();
             ui.GetComponent<UIManager>().UpdateCoins(drop);
             anim.SetTrigger("dead");
+            GetComponent<EnemySFX>().Death();
             rb.isKinematic = true;
             this.enabled = false;
+            GameManager.instance.GetComponent<SoundManager>().ResumeMusic();
         }
 
         if (target != null && health > 0)
@@ -111,6 +113,10 @@ public class EnemyController : MonoBehaviour
                 anim.SetBool("run", true);
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim.SetBool("attack", false);
+                if(GameManager.instance.GetComponent<SoundManager>().battleSource.isPlaying != true)
+                {
+                    GameManager.instance.GetComponent<SoundManager>().PlayBattleMusic();
+                }
                 break;
 
             case EnemyState.Attack:
@@ -122,6 +128,10 @@ public class EnemyController : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.05f);
                 anim.SetBool("attack", true);
                 attacking = true;
+                if (GameManager.instance.GetComponent<SoundManager>().battleSource.isPlaying != true)
+                {
+                    GameManager.instance.GetComponent<SoundManager>().PlayBattleMusic();
+                }
                 break;
         }
     }

@@ -17,6 +17,7 @@ public class PlayerSpell : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.forward * speed;
+        Destroy(gameObject, 0.5f);
     }
 
     private void OnCollisionEnter(Collision collision)

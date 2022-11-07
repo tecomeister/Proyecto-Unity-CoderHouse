@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     private bool isAiming = false;
 
     [Header("Speed")]
-    public float walkSpeed = 1f;
+    public float walkSpeed = 1.5f;
+    [SerializeField] private float aimSpeed = 1f;
     [SerializeField] private float runSpeed = 2f;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float slidingSpeed = 2f;
@@ -57,13 +58,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject shield;
     [SerializeField] private GameObject shieldSpawnPoint;
     private GameObject ui;
+    private GameObject merchant;
 
     public enum CameraType
     {
         Exploration,
         Combat
     }
-
     void Start()
     {
         player = GetComponent<CharacterController>();
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
         speed = walkSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         ui = GameObject.FindGameObjectWithTag("UI");
+        merchant = GameObject.FindGameObjectWithTag("Merchant");
     }
 
     void Update()
@@ -81,9 +83,35 @@ public class PlayerController : MonoBehaviour
             ShootTimer();
             ShieldTimer();
 
-            if(GameManager.instance.mana != GameManager.instance.maxMana)
+            if (GameManager.instance.mana != GameManager.instance.maxMana)
             {
                 ManaTimer();
+            }
+        }
+
+        if(merchant != null)
+        {
+            if (ui.GetComponent<PauseMenu>().pause != true && merchant.GetComponent<Merchant>().canBuy == true)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1) && ui.GetComponent<UIManager>().coins >= 15)
+                {
+                    if (GameManager.instance.health != GameManager.instance.maxHealth)
+                    {
+                        GameManager.instance.health += 20;
+                        ui.GetComponent<UIManager>().buyCoins(15);
+                    }
+
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2) && ui.GetComponent<UIManager>().coins >= 30)
+                {
+                    GameManager.instance.GetComponent<GameManager>().NewMaxHealth(25);
+                    ui.GetComponent<UIManager>().buyCoins(30);
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha3) && ui.GetComponent<UIManager>().coins >= 30)
+                {
+                    GameManager.instance.GetComponent<GameManager>().NewMaxMana(25);
+                    ui.GetComponent<UIManager>().buyCoins(30);
+                }
             }
         }
     }
@@ -168,6 +196,8 @@ public class PlayerController : MonoBehaviour
                 freeLookCam.GetComponent<CinemachineCameraOffset>().enabled = true;
 
                 GetCamDirection();
+
+                speed = aimSpeed;
 
                 movePlayer = playerInput.x * camRight + playerInput.z * camForward;
                 movePlayer *= speed;

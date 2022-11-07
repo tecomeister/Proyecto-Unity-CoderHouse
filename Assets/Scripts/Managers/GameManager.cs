@@ -20,24 +20,22 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-            health = maxHealth;
-            mana = maxMana;
-        }
+        health = maxHealth;
+        mana = maxMana;
     }
 
-    public static void NewMaxHealth(int healthToAdd)
+    public void NewMaxHealth(int healthToAdd)
     {
         instance.maxHealth += healthToAdd;
+        health = maxHealth;
     }
 
-    public static void NewMaxMana(int manaToAdd)
+    public void NewMaxMana(int manaToAdd)
     {
         instance.maxMana += manaToAdd;
+        mana = maxMana;
     }
 }

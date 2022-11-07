@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public Animator crossfade;
     public string nameOfScene;
+
     public void LoadScene(string sceneName)
     {
         nameOfScene = sceneName;

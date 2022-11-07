@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool pause;
+    public bool pause = true;
     public GameObject menu;
+    public GameObject controls;
+    public GameObject playerCam;
 
     void Start()
     {
@@ -16,7 +17,14 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (controls.activeInHierarchy == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            pause = true;
+            playerCam.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("Cancel") && controls.activeInHierarchy == false)
         { 
             if (pause)
             {
@@ -55,6 +63,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void CloseControls()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        controls.SetActive(false);
+        pause = false;
+        playerCam.SetActive(true);
     }
 
     public void QuitGame()

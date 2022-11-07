@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour
     public int coins;
     public Text coinsText;
 
+    [Header("Merchant Text")]
+    public GameObject merchantText;
+
 
     [Header("Player")]
     [SerializeField] private GameObject player;
@@ -42,12 +45,21 @@ public class UIManager : MonoBehaviour
             CoinsUI();
         }
 
+        if (merchantText.activeInHierarchy == true && GetComponentInParent<PauseMenu>().pause == true)
+        {
+            merchantText.GetComponent<CanvasGroup>().alpha = 0;
+        } else if (merchantText.activeInHierarchy == true && GetComponentInParent<PauseMenu>().pause == false)
+        {
+            merchantText.GetComponent<CanvasGroup>().alpha = 1;
+        }
     }
 
     void HealthUI()
     {
         health = GameManager.instance.health;
         mana = GameManager.instance.mana;
+        maxHealth = GameManager.instance.maxHealth;
+        maxMana = GameManager.instance.maxMana;
         healthText.text = health + "/" + maxHealth;
         manaText.text = mana + "/" + maxMana;
         HealthOrb.fillAmount = health / maxHealth;
@@ -62,5 +74,10 @@ public class UIManager : MonoBehaviour
     public void UpdateCoins(int coinsAmmount)
     {
         coins += coinsAmmount;
+    }
+
+    public void buyCoins(int coinsAmmount)
+    {
+        coins -= coinsAmmount;
     }
 }

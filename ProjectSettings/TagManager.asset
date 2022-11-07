@@ -10,6 +10,8 @@ TagManager:
   - UI
   - Breakable
   - InvisWalls
+  - Merchant
+  - PlayerSpell
   layers:
   - Default
   - TransparentFX

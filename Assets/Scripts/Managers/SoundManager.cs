@@ -31,13 +31,13 @@ public class SoundManager : MonoBehaviour
         instance.musicSource.Play();
     }
 
-    public static void PlayBattleMusic()
+    public void PlayBattleMusic()
     {
         instance.battleSource.Play();
         instance.musicSource.Stop();
     }
 
-    public static void ResumeMusic()
+    public void ResumeMusic()
     {
         instance.battleSource.Stop();
         instance.musicSource.Play();

@@ -22,6 +22,12 @@ public class PlayerHealth : MonoBehaviour
         EnableRagdoll(false);
     }
 
+    void Start()
+    {
+        GameManager.instance.health = GameManager.instance.maxHealth;
+        GameManager.instance.mana = GameManager.instance.maxMana;
+    }
+
     void Update()
     {
 
@@ -29,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         {
             GetComponent<PlayerSFX>().Death();
             deathMenu.SetActive(true);
-            gameObject.tag = ("Untagged");
+            Cursor.lockState = CursorLockMode.None;
             cameraPlayer.SetActive(false);
             EnableRagdoll(true);
         }
