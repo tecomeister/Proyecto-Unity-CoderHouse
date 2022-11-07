@@ -346,15 +346,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461162326491, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.031950958
+      value: 0.031950988
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461162326491, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017967224
+      value: 0.000000017569674
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461162326491, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.743633e-10
+      value: -5.616552e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461387622712, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_Name
@@ -368,6 +368,26 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1437300543}
+    - target: {fileID: 3075082461387622718, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
+      propertyPath: m_YAxis.Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075082461387622718, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075082461387622718, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
+      propertyPath: m_YAxis.m_MaxSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075082461387622718, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
+      propertyPath: m_Orbits.Array.data[0].m_Height
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075082461387622718, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
+      propertyPath: m_Orbits.Array.data[0].m_Radius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3075082461387622719, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -434,11 +454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461473510424, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000014688831
+      value: -3.9358594e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461473510424, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.0221805e-11
+      value: 5.4184153e-12
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461872330837, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -462,11 +482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461872330837, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000026375906
+      value: 0.000000001321896
       objectReference: {fileID: 0}
     - target: {fileID: 3075082461872330837, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.1543575e-11
+      value: 5.7853583e-12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b49d6cb9fccf9448a33864ffbb2b0c0, type: 3}
@@ -969,6 +989,39 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseControls
       objectReference: {fileID: 0}
+    - target: {fileID: 6164943010036055977, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766940684183741177, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
+      propertyPath: m_Text
+      value: 'CONTROLS
+
+
+        WASD - Movement
+
+        RMB (Hold) - Aim
+
+        LMB
+        (While Aiming) - Shoot
+
+        Space Bar - Jump
+
+        LShift - Run
+
+        E
+        (While Aiming) - Spawn Shield
+
+        SlowMo - Aim while Jumping'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766940684183741177, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766940684183741177, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 7021947126690687277, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
       propertyPath: controls
       value: 
@@ -1071,7 +1124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7021947127905479672, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7415732106920991716, guid: 264608c3406c42b44a1f6050dccedfdb, type: 3}
       propertyPath: m_Text
@@ -1171,7 +1224,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630115138}
-  m_LocalRotation: {x: 0.013765486, y: 9.312345e-10, z: -1.28201096e-11, w: 0.9999053}
+  m_LocalRotation: {x: 0.013765486, y: -9.312345e-10, z: 1.28201096e-11, w: 0.9999053}
   m_LocalPosition: {x: 0, y: 1.5699999, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
