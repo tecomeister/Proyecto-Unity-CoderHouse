@@ -37,6 +37,15 @@ public class EnemyController : MonoBehaviour
         Attack
     }
 
+    void Awake()
+    {
+        Enemy orco = new Enemy();
+        orco.health = health;
+        orco.walkSpeed = walkSpeed;
+        orco.runSpeed = runSpeed;
+        Debug.Log("Orco creado : Vida = " + orco.health + " Velocidad al caminar = " + orco.walkSpeed + " Velocidad al correr = " + orco.runSpeed);
+    }
+
     void Start()
     {
         anim = GetComponent<Animator>();
