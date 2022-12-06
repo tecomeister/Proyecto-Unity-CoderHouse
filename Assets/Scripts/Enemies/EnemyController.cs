@@ -7,10 +7,22 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject target;
     [SerializeField] private Collider weaponCol;
+<<<<<<< Updated upstream
     [SerializeField] private int health;
     [SerializeField] private GameObject ui;
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private CapsuleCollider enemyCollider;
+=======
+    private Animator anim;
+    private GameObject target;
+    private Rigidbody rb;
+    private GameObject ui;
+
+    [Header("Stats")]
+    public int health;
+    public int walkSpeed;
+    public int runSpeed;
+>>>>>>> Stashed changes
     public int drop;
     public int speed, walkSpeed, runSpeed;
     public float maxRadiusTarget, minRadiusTarget;
@@ -29,14 +41,6 @@ public class EnemyController : MonoBehaviour
         Attack
     }
 
-    void Awake()
-    {
-        Enemy orco = new Enemy();
-        orco.health = health;
-        orco.walkSpeed = walkSpeed;
-        orco.runSpeed = runSpeed;
-        Debug.Log("Orco creado : Vida = " + orco.health + " Velocidad al caminar = " + orco.walkSpeed + " Velocidad al correr = " + orco.runSpeed);
-    }
 
     void Start()
     {
