@@ -9,6 +9,7 @@ public class Crypt : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Main Menu");
         }
     }
