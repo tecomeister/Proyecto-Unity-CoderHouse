@@ -63,6 +63,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+        GameManager.instance.GetComponent<SoundManager>().ResumeMusic();
     }
 
     public void CloseControls()

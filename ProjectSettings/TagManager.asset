@@ -12,6 +12,7 @@ TagManager:
   - InvisWalls
   - Merchant
   - PlayerSpell
+  - Manager
   layers:
   - Default
   - TransparentFX

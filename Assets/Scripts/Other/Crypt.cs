@@ -11,6 +11,7 @@ public class Crypt : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Main Menu");
+            GameManager.instance.GetComponent<SoundManager>().ResumeMusic();
         }
     }
 }

@@ -22,6 +22,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
+            ResumeMusic();
             Destroy(gameObject);
         }
     }
