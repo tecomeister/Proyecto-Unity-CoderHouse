@@ -82,11 +82,16 @@ public class PlayerController : MonoBehaviour
             PlayerMovement();
             ShootTimer();
             ShieldTimer();
+            freeLookCam.SetActive(true);
 
             if (GameManager.instance.mana != GameManager.instance.maxMana)
             {
                 ManaTimer();
             }
+        }
+        else
+        {
+            freeLookCam.SetActive(false);
         }
 
         if(merchant != null)
