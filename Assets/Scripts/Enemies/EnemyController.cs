@@ -113,7 +113,7 @@ public class EnemyController : MonoBehaviour
                 anim.SetBool("run", true);
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim.SetBool("attack", false);
-                if(GameManager.instance.GetComponent<SoundManager>().battleSource.isPlaying != true)
+                if(GameManager.instance.GetComponent<SoundManager>().battleSource.volume == 0f)
                 {
                     GameManager.instance.GetComponent<SoundManager>().PlayBattleMusic();
                 }
@@ -128,7 +128,7 @@ public class EnemyController : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.05f);
                 anim.SetBool("attack", true);
                 attacking = true;
-                if (GameManager.instance.GetComponent<SoundManager>().battleSource.isPlaying != true)
+                if (GameManager.instance.GetComponent<SoundManager>().battleSource.volume == 0f)
                 {
                     GameManager.instance.GetComponent<SoundManager>().PlayBattleMusic();
                 }

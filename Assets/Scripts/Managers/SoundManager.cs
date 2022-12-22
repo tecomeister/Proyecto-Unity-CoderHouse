@@ -29,18 +29,20 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
+        ResumeMusic();
         instance.musicSource.Play();
+        instance.battleSource.Play();
     }
 
     public void PlayBattleMusic()
     {
-        instance.battleSource.Play();
-        instance.musicSource.Stop();
+        instance.battleSource.volume = 0.5f;
+        instance.musicSource.volume = 0f;
     }
 
     public void ResumeMusic()
     {
-        instance.battleSource.Stop();
-        instance.musicSource.Play();
+        instance.battleSource.volume = 0f;
+        instance.musicSource.volume = 0.5f;
     }
 }
