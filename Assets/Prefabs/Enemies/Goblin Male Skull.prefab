@@ -2385,6 +2385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Goblin_Machete_01
       objectReference: {fileID: 0}
+    - target: {fileID: 173842, guid: 34576738923b14941a286d5fc7d3c9f6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 423478, guid: 34576738923b14941a286d5fc7d3c9f6, type: 3}
       propertyPath: m_RootOrder
       value: 3

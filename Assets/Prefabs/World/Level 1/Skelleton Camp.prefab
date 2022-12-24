@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3255216981543970526
 Transform:
@@ -129,7 +129,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7747089198875651571
 Transform:
@@ -167,7 +167,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7747089199786373878
 Transform:
@@ -200,7 +200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7747089199808307110
 Transform:
@@ -227,6 +227,10 @@ PrefabInstance:
     - target: {fileID: 149086, guid: 4045dbaae77b39241bd7c0edbd188a33, type: 3}
       propertyPath: m_Name
       value: Lute
+      objectReference: {fileID: 0}
+    - target: {fileID: 149086, guid: 4045dbaae77b39241bd7c0edbd188a33, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 492148, guid: 4045dbaae77b39241bd7c0edbd188a33, type: 3}
       propertyPath: m_RootOrder
@@ -301,6 +305,10 @@ PrefabInstance:
     - target: {fileID: 1343993465843396, guid: 0af4776ee237da14ab4a893e536ee150, type: 3}
       propertyPath: m_Name
       value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343993465843396, guid: 0af4776ee237da14ab4a893e536ee150, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4957746192394802, guid: 0af4776ee237da14ab4a893e536ee150, type: 3}
       propertyPath: m_RootOrder
@@ -382,6 +390,10 @@ PrefabInstance:
     - target: {fileID: 121376, guid: 19fe5cc2a44e36940b2b60a288b72525, type: 3}
       propertyPath: m_Name
       value: Goblin Tent
+      objectReference: {fileID: 0}
+    - target: {fileID: 121376, guid: 19fe5cc2a44e36940b2b60a288b72525, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 498976, guid: 19fe5cc2a44e36940b2b60a288b72525, type: 3}
       propertyPath: m_RootOrder
@@ -468,6 +480,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fabff3cbe4a4be24a90f7b23e155e025, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -538,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 111144, guid: a036f07dfd16e91408004195196bba4e, type: 3}
       propertyPath: m_Name
       value: Skelleton Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 111144, guid: a036f07dfd16e91408004195196bba4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 430828, guid: a036f07dfd16e91408004195196bba4e, type: 3}
       propertyPath: m_RootOrder
@@ -620,6 +640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle
       objectReference: {fileID: 0}
+    - target: {fileID: 142584, guid: 28b56993a0977004882db8754d3904ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 456960, guid: 28b56993a0977004882db8754d3904ee, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -694,6 +718,10 @@ PrefabInstance:
     - target: {fileID: 167682, guid: 466425cd105379046beddc7cb48df13e, type: 3}
       propertyPath: m_Name
       value: Round Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 167682, guid: 466425cd105379046beddc7cb48df13e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 467110, guid: 466425cd105379046beddc7cb48df13e, type: 3}
       propertyPath: m_RootOrder
@@ -775,6 +803,10 @@ PrefabInstance:
     - target: {fileID: 188464, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
       propertyPath: m_Name
       value: Sleketon Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 188464, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 442280, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
       propertyPath: m_RootOrder

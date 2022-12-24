@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1404393417427087546
 Transform:
@@ -62,7 +62,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5518125807642754271
 Transform:
@@ -161,7 +161,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5518125807642768145
 Transform:
@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Item_Coins_03
       objectReference: {fileID: 0}
+    - target: {fileID: 138872, guid: 2c70562ca10765c42a41667567224154, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 412796, guid: 2c70562ca10765c42a41667567224154, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -353,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Item_Coins_04
       objectReference: {fileID: 0}
+    - target: {fileID: 151506, guid: b3d78aa56c0f0094b86a6d788e1864e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 404270, guid: b3d78aa56c0f0094b86a6d788e1864e1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -415,6 +423,14 @@ PrefabInstance:
     - target: {fileID: 152438, guid: 9d82e1be9de81be4dbc15c60c39dd6ff, type: 3}
       propertyPath: m_Name
       value: FX_SkeletonSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 152438, guid: 9d82e1be9de81be4dbc15c60c39dd6ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 174396, guid: 9d82e1be9de81be4dbc15c60c39dd6ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 416600, guid: 9d82e1be9de81be4dbc15c60c39dd6ff, type: 3}
       propertyPath: m_RootOrder

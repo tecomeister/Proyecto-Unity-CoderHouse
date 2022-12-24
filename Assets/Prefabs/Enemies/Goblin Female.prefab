@@ -2301,6 +2301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Goblin_Shiv_Stone_01
       objectReference: {fileID: 0}
+    - target: {fileID: 117684, guid: d6675a7e4e281ed4a8d05189c67a52d2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 408656, guid: d6675a7e4e281ed4a8d05189c67a52d2, type: 3}
       propertyPath: m_RootOrder
       value: 3

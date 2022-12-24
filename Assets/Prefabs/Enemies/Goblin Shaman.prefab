@@ -1301,15 +1301,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c368393e060a844d9ec1bcab94b9c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rutina: 0
-  cronometro: 0
-  animacion: {fileID: 0}
-  angulo: {x: 0, y: 0, z: 0, w: 0}
-  grado: 0
-  target: {fileID: 0}
-  ataque: 0
-  armaCollider: {fileID: 0}
-  shooter: 1
+  weaponCol: {fileID: 0}
+  health: 0
+  walkSpeed: 0
+  runSpeed: 0
+  drop: 0
+  waypoints: []
+  maxRadiusTarget: 0
+  minRadiusTarget: 0
 --- !u!1 &4712517330480454083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,6 +2155,10 @@ PrefabInstance:
     - target: {fileID: 128030, guid: 3e567880dba875d4fbc7834ca7f5b289, type: 3}
       propertyPath: m_Name
       value: SM_Wep_Goblin_Staff_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 128030, guid: 3e567880dba875d4fbc7834ca7f5b289, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 462362, guid: 3e567880dba875d4fbc7834ca7f5b289, type: 3}
       propertyPath: m_RootOrder

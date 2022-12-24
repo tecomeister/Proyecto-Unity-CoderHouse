@@ -21,8 +21,13 @@ public class UIManager : MonoBehaviour
     public int coins;
     public Text coinsText;
 
-    [Header("Merchant Text")]
+    [Header("Collectable Counter")]
+    public int collectable;
+    public Text collectableText;
+
+    [Header("Text Boxes")]
     public GameObject merchantText;
+    public GameObject cryptText;
 
 
     [Header("Player")]
@@ -35,6 +40,7 @@ public class UIManager : MonoBehaviour
         mana = GameManager.instance.mana;
         maxMana = GameManager.instance.maxMana;
         coins = 0;
+        collectable = 0;
     }
 
     void Update()
@@ -43,6 +49,7 @@ public class UIManager : MonoBehaviour
         {
             HealthUI();
             CoinsUI();
+            CollectableUI();
         }
 
         if (merchantText.activeInHierarchy == true && GetComponentInParent<PauseMenu>().pause == true)
@@ -80,4 +87,14 @@ public class UIManager : MonoBehaviour
     {
         coins -= coinsAmmount;
     }
+
+    void CollectableUI()
+    {
+        collectableText.text = collectable.ToString();
+    }
+    public void UpdateCollectables(int collectableAmmount)
+    {
+        collectable += collectableAmmount;
+    }
+
 }

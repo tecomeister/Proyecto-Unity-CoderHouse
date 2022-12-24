@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Stone
       objectReference: {fileID: 0}
+    - target: {fileID: 178702, guid: 4a35e71f929fb994688db9ce77a9bf90, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 462112, guid: 4a35e71f929fb994688db9ce77a9bf90, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -260,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Railling 1
       objectReference: {fileID: 0}
+    - target: {fileID: 138258, guid: 65682ff7b4f6af14e8b6ead3efeff6c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 428250, guid: 65682ff7b4f6af14e8b6ead3efeff6c3, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -333,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 129630, guid: 276be0eeb7d45eb4eada49334e36062d, type: 3}
       propertyPath: m_Name
       value: Big Pillar 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 129630, guid: 276be0eeb7d45eb4eada49334e36062d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 489622, guid: 276be0eeb7d45eb4eada49334e36062d, type: 3}
       propertyPath: m_RootOrder
@@ -427,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stand
       objectReference: {fileID: 0}
+    - target: {fileID: 158108, guid: eab88f6a71881d8468474cc3e3610734, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 401018, guid: eab88f6a71881d8468474cc3e3610734, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -519,6 +535,10 @@ PrefabInstance:
     - target: {fileID: 144150, guid: fb698eb68f15b3845baf425febbee697, type: 3}
       propertyPath: m_Name
       value: Barrel Half
+      objectReference: {fileID: 0}
+    - target: {fileID: 144150, guid: fb698eb68f15b3845baf425febbee697, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 438130, guid: fb698eb68f15b3845baf425febbee697, type: 3}
       propertyPath: m_RootOrder
@@ -694,6 +714,10 @@ PrefabInstance:
     - target: {fileID: 125232, guid: 5df4398968a81e04dadfc73e32ca7f79, type: 3}
       propertyPath: m_Name
       value: Pillar 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 125232, guid: 5df4398968a81e04dadfc73e32ca7f79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 423780, guid: 5df4398968a81e04dadfc73e32ca7f79, type: 3}
       propertyPath: m_RootOrder
@@ -952,6 +976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar 1
       objectReference: {fileID: 0}
+    - target: {fileID: 129646, guid: 7d79016e80036a946b9856f425f39e7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 480118, guid: 7d79016e80036a946b9856f425f39e7b, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1045,6 +1073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Railling 3
       objectReference: {fileID: 0}
+    - target: {fileID: 152716, guid: 41ec293d7ae663c418439466f0d7c93e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 402256, guid: 41ec293d7ae663c418439466f0d7c93e, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1118,6 +1150,10 @@ PrefabInstance:
     - target: {fileID: 147182, guid: 38acd8f33333a454aa8e10b6297ab6c8, type: 3}
       propertyPath: m_Name
       value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 147182, guid: 38acd8f33333a454aa8e10b6297ab6c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 492730, guid: 38acd8f33333a454aa8e10b6297ab6c8, type: 3}
       propertyPath: m_RootOrder
@@ -1213,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton Prision
       objectReference: {fileID: 0}
+    - target: {fileID: 187152, guid: ae21f9dfbc8404a4a99440237a6af322, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 463234, guid: ae21f9dfbc8404a4a99440237a6af322, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1305,6 +1345,10 @@ PrefabInstance:
     - target: {fileID: 175928, guid: 497b6e4d56b9a2d48ac2cd8de829fa88, type: 3}
       propertyPath: m_Name
       value: Barrel Pieces
+      objectReference: {fileID: 0}
+    - target: {fileID: 175928, guid: 497b6e4d56b9a2d48ac2cd8de829fa88, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 452834, guid: 497b6e4d56b9a2d48ac2cd8de829fa88, type: 3}
       propertyPath: m_RootOrder
@@ -1399,6 +1443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Railling 2
       objectReference: {fileID: 0}
+    - target: {fileID: 188256, guid: 448c0a42e26b67647bccf1ae2a4e5d72, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 451556, guid: 448c0a42e26b67647bccf1ae2a4e5d72, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1472,6 +1520,10 @@ PrefabInstance:
     - target: {fileID: 115520, guid: 90f3c4ff3017eea40b4d574d1389d66e, type: 3}
       propertyPath: m_Name
       value: Pillar 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 115520, guid: 90f3c4ff3017eea40b4d574d1389d66e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 420102, guid: 90f3c4ff3017eea40b4d574d1389d66e, type: 3}
       propertyPath: m_RootOrder
@@ -1565,6 +1617,10 @@ PrefabInstance:
     - target: {fileID: 143766, guid: c0404b88de03f0d40a45293c7ab546b9, type: 3}
       propertyPath: m_Name
       value: Pillar 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 143766, guid: c0404b88de03f0d40a45293c7ab546b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 458440, guid: c0404b88de03f0d40a45293c7ab546b9, type: 3}
       propertyPath: m_RootOrder
@@ -1733,6 +1789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Pillar 2
       objectReference: {fileID: 0}
+    - target: {fileID: 129630, guid: 276be0eeb7d45eb4eada49334e36062d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 489622, guid: 276be0eeb7d45eb4eada49334e36062d, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1825,6 +1885,10 @@ PrefabInstance:
     - target: {fileID: 147220, guid: b6d8924893ac4884481532f033644103, type: 3}
       propertyPath: m_Name
       value: Pillar Pieces 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 147220, guid: b6d8924893ac4884481532f033644103, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 497628, guid: b6d8924893ac4884481532f033644103, type: 3}
       propertyPath: m_RootOrder
@@ -1919,6 +1983,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock Skelleton
       objectReference: {fileID: 0}
+    - target: {fileID: 139750, guid: 2ee208c34a9dde740b181edcfdb93211, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405006, guid: 2ee208c34a9dde740b181edcfdb93211, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2011,6 +2079,10 @@ PrefabInstance:
     - target: {fileID: 181792, guid: 7a216d45184954f4f8fdad696d7ab71b, type: 3}
       propertyPath: m_Name
       value: Alter
+      objectReference: {fileID: 0}
+    - target: {fileID: 181792, guid: 7a216d45184954f4f8fdad696d7ab71b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 415588, guid: 7a216d45184954f4f8fdad696d7ab71b, type: 3}
       propertyPath: m_RootOrder
@@ -2106,6 +2178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fountain
       objectReference: {fileID: 0}
+    - target: {fileID: 131582, guid: 6bbd17f12a2597b40a7e0227052c6f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 492018, guid: 6bbd17f12a2597b40a7e0227052c6f44, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2199,6 +2275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 116074, guid: 9d1850479201a0541a4deb81578aeb4f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 447894, guid: 9d1850479201a0541a4deb81578aeb4f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2273,6 +2353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Railling 4
       objectReference: {fileID: 0}
+    - target: {fileID: 150024, guid: f5a7d78ddef3a0540863e2e3d08b8f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 453686, guid: f5a7d78ddef3a0540863e2e3d08b8f17, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2346,6 +2430,10 @@ PrefabInstance:
     - target: {fileID: 188464, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
       propertyPath: m_Name
       value: Skelleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 188464, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 442280, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
       propertyPath: m_RootOrder
@@ -2439,6 +2527,10 @@ PrefabInstance:
     - target: {fileID: 143760, guid: a00cf8ef81e92b14cadd28b0a110b16f, type: 3}
       propertyPath: m_Name
       value: Pillar Pieces 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 143760, guid: a00cf8ef81e92b14cadd28b0a110b16f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 460016, guid: a00cf8ef81e92b14cadd28b0a110b16f, type: 3}
       propertyPath: m_RootOrder

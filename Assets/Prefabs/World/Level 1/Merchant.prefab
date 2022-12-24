@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Merchant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1516772743465975860
 Transform:
@@ -76,7 +76,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &562821322926826702
 Transform:
@@ -120,7 +120,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1334721566167432752
 Transform:
@@ -153,6 +153,10 @@ PrefabInstance:
     - target: {fileID: 138800, guid: 973e05b9f0f54c340a1c4591b29e5f39, type: 3}
       propertyPath: m_Name
       value: Health Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 138800, guid: 973e05b9f0f54c340a1c4591b29e5f39, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 481828, guid: 973e05b9f0f54c340a1c4591b29e5f39, type: 3}
       propertyPath: m_RootOrder
@@ -235,6 +239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone Table
       objectReference: {fileID: 0}
+    - target: {fileID: 141482, guid: 16b5a7abcb1d9cb438b51c495e76eb52, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405634, guid: 16b5a7abcb1d9cb438b51c495e76eb52, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -315,6 +323,10 @@ PrefabInstance:
     - target: {fileID: 157152, guid: 03eb254be55316240929244bd19caa02, type: 3}
       propertyPath: m_Name
       value: Health Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 157152, guid: 03eb254be55316240929244bd19caa02, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 453130, guid: 03eb254be55316240929244bd19caa02, type: 3}
       propertyPath: m_RootOrder
@@ -397,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Throne
       objectReference: {fileID: 0}
+    - target: {fileID: 195566, guid: 72b91f7a748aab9489b17b6ace89a1c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 477042, guid: 72b91f7a748aab9489b17b6ace89a1c7, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -478,6 +494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mana Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 186258, guid: c0391bc2170c2054ebb26f1f425004b4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 450952, guid: c0391bc2170c2054ebb26f1f425004b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -555,9 +575,217 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1334721566167432752}
     m_Modifications:
+    - target: {fileID: 102712, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 105172, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 105348, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 106686, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 106918, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 107664, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 109272, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 109372, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 111812, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 113680, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 116140, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 120692, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 123808, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 123884, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 124490, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 125708, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 129272, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 129596, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 132096, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 139558, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 141998, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 143128, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 143372, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 147178, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 148122, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 149268, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 150092, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 152060, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 155132, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 158628, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 162408, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 165058, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 167302, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 168692, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 170468, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 175510, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 176276, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 177080, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 177830, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 181916, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 182766, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 183380, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 185550, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 187128, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 189184, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 190786, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 190788, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 190926, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 193532, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 194510, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
       propertyPath: m_Name
       value: Merchant NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 194510, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 199144, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 199192, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 497166, guid: 66ec70d7de4f4c644a7ace1f5f0a2a9f, type: 3}
       propertyPath: m_RootOrder
@@ -624,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 195378, guid: 7f3e28fd8f7ec044aa81238b1b58a5da, type: 3}
       propertyPath: m_Name
       value: Broken Wall 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195378, guid: 7f3e28fd8f7ec044aa81238b1b58a5da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 441822, guid: 7f3e28fd8f7ec044aa81238b1b58a5da, type: 3}
       propertyPath: m_RootOrder
@@ -718,6 +950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Barrell 2
       objectReference: {fileID: 0}
+    - target: {fileID: 144150, guid: fb698eb68f15b3845baf425febbee697, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 438130, guid: fb698eb68f15b3845baf425febbee697, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -798,6 +1034,10 @@ PrefabInstance:
     - target: {fileID: 188464, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
       propertyPath: m_Name
       value: Skelleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 188464, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 442280, guid: ec78f1131a3a5464a8882bd020e329ff, type: 3}
       propertyPath: m_RootOrder
@@ -884,6 +1124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Vase 1
       objectReference: {fileID: 0}
+    - target: {fileID: 195242, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 459182, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -964,6 +1208,10 @@ PrefabInstance:
     - target: {fileID: 123038, guid: 8931c8ab0e767cb4d84f62ac124e515c, type: 3}
       propertyPath: m_Name
       value: Broken Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 123038, guid: 8931c8ab0e767cb4d84f62ac124e515c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 465442, guid: 8931c8ab0e767cb4d84f62ac124e515c, type: 3}
       propertyPath: m_RootOrder
@@ -1046,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Barrell Pieces
       objectReference: {fileID: 0}
+    - target: {fileID: 175928, guid: 497b6e4d56b9a2d48ac2cd8de829fa88, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 452834, guid: 497b6e4d56b9a2d48ac2cd8de829fa88, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1126,6 +1378,10 @@ PrefabInstance:
     - target: {fileID: 122956, guid: 2bd7c1c7c1bdbb84a91591e48d1ae167, type: 3}
       propertyPath: m_Name
       value: Railling Broken 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 122956, guid: 2bd7c1c7c1bdbb84a91591e48d1ae167, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 425312, guid: 2bd7c1c7c1bdbb84a91591e48d1ae167, type: 3}
       propertyPath: m_RootOrder
@@ -1282,6 +1538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Small Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 188084, guid: bebcf1a0aa9f6d441ae63b251c7de33c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 496216, guid: bebcf1a0aa9f6d441ae63b251c7de33c, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1355,6 +1615,10 @@ PrefabInstance:
     - target: {fileID: 122956, guid: 2bd7c1c7c1bdbb84a91591e48d1ae167, type: 3}
       propertyPath: m_Name
       value: Railling Broken 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 122956, guid: 2bd7c1c7c1bdbb84a91591e48d1ae167, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 425312, guid: 2bd7c1c7c1bdbb84a91591e48d1ae167, type: 3}
       propertyPath: m_RootOrder
@@ -1437,6 +1701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Vase 2
       objectReference: {fileID: 0}
+    - target: {fileID: 152502, guid: 6d25f3b3d5ab1b243b60794d51a93b36, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 476322, guid: 6d25f3b3d5ab1b243b60794d51a93b36, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1518,6 +1786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broken Small Pillar
       objectReference: {fileID: 0}
+    - target: {fileID: 143760, guid: a00cf8ef81e92b14cadd28b0a110b16f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 460016, guid: a00cf8ef81e92b14cadd28b0a110b16f, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1598,6 +1870,10 @@ PrefabInstance:
     - target: {fileID: 144152, guid: 79bc9246d82833f41a623e9e01fd5e0a, type: 3}
       propertyPath: m_Name
       value: Broken Wall 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 144152, guid: 79bc9246d82833f41a623e9e01fd5e0a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 454530, guid: 79bc9246d82833f41a623e9e01fd5e0a, type: 3}
       propertyPath: m_RootOrder
@@ -1691,6 +1967,10 @@ PrefabInstance:
     - target: {fileID: 144150, guid: fb698eb68f15b3845baf425febbee697, type: 3}
       propertyPath: m_Name
       value: Broken Barrell 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144150, guid: fb698eb68f15b3845baf425febbee697, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 438130, guid: fb698eb68f15b3845baf425febbee697, type: 3}
       propertyPath: m_RootOrder

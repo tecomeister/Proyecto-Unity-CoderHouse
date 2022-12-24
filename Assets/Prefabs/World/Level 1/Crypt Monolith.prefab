@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7202414622012944273
 Transform:
@@ -47,6 +47,10 @@ PrefabInstance:
     - target: {fileID: 169328, guid: c66e9c73031be484a9ef1afd60c584ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_RockPile_Square_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 169328, guid: c66e9c73031be484a9ef1afd60c584ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405816, guid: c66e9c73031be484a9ef1afd60c584ab, type: 3}
       propertyPath: m_RootOrder
@@ -141,6 +145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_RockPile_Square_01
       objectReference: {fileID: 0}
+    - target: {fileID: 150720, guid: 07d8e21504c5ced46b0e0d81a1698023, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 411664, guid: 07d8e21504c5ced46b0e0d81a1698023, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -233,6 +241,10 @@ PrefabInstance:
     - target: {fileID: 162548, guid: 6fd36fc025171e6429f9d552f29abbff, type: 3}
       propertyPath: m_Name
       value: SM_Env_RockPile_Square_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 162548, guid: 6fd36fc025171e6429f9d552f29abbff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 450998, guid: 6fd36fc025171e6429f9d552f29abbff, type: 3}
       propertyPath: m_RootOrder
@@ -327,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_RockPile_Square_05
       objectReference: {fileID: 0}
+    - target: {fileID: 151608, guid: b68609c9c45bfc84ca7b4af4feab7d84, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 494070, guid: b68609c9c45bfc84ca7b4af4feab7d84, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -419,6 +435,10 @@ PrefabInstance:
     - target: {fileID: 151256, guid: f2e183d3a4ac7cc44ad43fb988762f28, type: 3}
       propertyPath: m_Name
       value: SM_Env_RockPile_Square_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 151256, guid: f2e183d3a4ac7cc44ad43fb988762f28, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 465198, guid: f2e183d3a4ac7cc44ad43fb988762f28, type: 3}
       propertyPath: m_RootOrder
@@ -517,6 +537,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 155468, guid: ea0c7071e67bf1c43940a8ab3ea121f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 492300, guid: ea0c7071e67bf1c43940a8ab3ea121f8, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -560,6 +584,10 @@ PrefabInstance:
     - target: {fileID: 492300, guid: ea0c7071e67bf1c43940a8ab3ea121f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771473707510040467, guid: ea0c7071e67bf1c43940a8ab3ea121f8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea0c7071e67bf1c43940a8ab3ea121f8, type: 3}
